@@ -1,0 +1,1 @@
+# smart-warehouse-automation-platform1
