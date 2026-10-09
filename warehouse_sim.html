@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1220" />
+    <title>Live warehouse</title>
+    <meta name="description" content="A whole distribution centre running live in your browser: trucks reversing onto docks, forklifts unloading, receiving QC, put away into racks, robots bringing shelves to pickers, packing, sortation, loading and departure." />
+    <link rel="canonical" href="https://www.airsup.ai/lab/warehouse" />
+    <meta property="og:site_name" content="airsup lab" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.airsup.ai/lab/warehouse" />
+    <meta property="og:title" content="A live warehouse, every step" />
+    <meta property="og:description" content="Gate to dock to rack to robot to box to truck. A full distribution centre, simulated in your browser." />
+    <meta property="og:image" content="https://www.airsup.ai/plm/rocket-engine/og-warehouse.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@konstantinsaifo" />
+    <meta name="twitter:image" content="https://www.airsup.ai/plm/rocket-engine/og-warehouse.jpg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.airsup.ai/plm/brand/icon-32.png" />
+    <script type="module" crossorigin src="https://www.airsup.ai/plm/rocket-engine/assets/warehouse-b7zrUScC.js"></script>
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/Pass-mJhgIX3K.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/OrbitControls-DbAj9KiR.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/pipeline-CpMpgVMF.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/GTAOShader-DZFeBxpu.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/GTAOPass-rkTwKfbH.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/BufferGeometryUtils-DL_sQ4BQ.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/layout-B91VFmhI.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/textures-S90URTk9.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/RoundedBoxGeometry-BtEUqxbG.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/models-CwmgIZnv.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/world-BSjHSXBD.js">
+    <link rel="modulepreload" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/sim-C2KRT91b.js">
+    <link rel="stylesheet" crossorigin href="https://www.airsup.ai/plm/rocket-engine/assets/warehouse-Byh9drgs.css">
+  </head>
+  <body>
+    <canvas id="gl"></canvas>
+    <div id="labels" aria-hidden="true"></div>
+    <div id="sel" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+    <a class="brand" href="https://www.airsup.ai/lab" aria-label="airsup lab"><img src="https://www.airsup.ai/plm/rocket-engine/airsup-wordmark.webp" alt="airsup" width="180" height="20" /></a>
+
+    <section class="kpis" id="kpis"></section>
+
+    <div class="lcol">
+      <nav class="flow glass" id="flow" aria-label="Warehouse flow"></nav>
+      <section class="view glass" aria-label="View">
+        <div class="seg" id="tod"><button data-v="7.1">Dawn</button><button data-v="11.5" class="on">Day</button><button data-v="19.7">Dusk</button><button data-v="22.5">Night</button></div>
+        <div class="vrow">
+          <div class="seg" id="roof"><button data-v="cut" class="on">Cutaway</button><button data-v="full">Roof</button></div>
+          <div class="seg" id="spd"><button data-v="1" class="on">1x</button><button data-v="3">3x</button><button data-v="8">8x</button></div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="insp glass" id="insp"></aside>
+
+    <section class="track glass" id="track"></section>
+
+    <section class="fleet glass" id="fleet"></section>
+
+    <div class="hint" id="hint">Drag to orbit · right drag to pan · scroll to zoom · click anything</div>
+
+    <!-- airsup analytics: one page view per lab page (path + query, so each exhibit is counted), then clicks, time and exits -->
+    <script>!function(){if(!/airsup\.ai$/.test(location.hostname))return;var s=sessionStorage.getItem("_asid");if(!s){s=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem("_asid",s);}if(navigator.sendBeacon){navigator.sendBeacon("/api/analytics/track",new Blob([JSON.stringify({page:location.pathname+location.search,session_id:s,referrer:document.referrer||null})],{type:"application/json"}));};var t=document.createElement("script");t.src="https://www.airsup.ai/assets/tracker.js";t.defer=true;document.head.appendChild(t);}();</script>
+  </body>
+</html>
